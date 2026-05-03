@@ -40,9 +40,14 @@ export const judgeApi = {
     return fetchWithThrow(`${API_URL}/judge/block-road-mode?enabled=${enabled}`, { method: 'POST' });
   },
 
-  blockCorridor: async (from_node, to_node) => {
-    const params = new URLSearchParams({ from_node, to_node });
-    return fetchWithThrow(`${API_URL}/judge/block-corridor?${params.toString()}`, { method: 'POST' });
+  blockRoad: async (node1, node2, route_name) => {
+    const params = new URLSearchParams({ node1, node2, route_name });
+    return fetchWithThrow(`${API_URL}/judge/block-road?${params.toString()}`, { method: 'POST' });
+  },
+
+  unblockRoad: async (node1, node2, route_name) => {
+    const params = new URLSearchParams({ node1, node2, route_name });
+    return fetchWithThrow(`${API_URL}/judge/unblock-road?${params.toString()}`, { method: 'POST' });
   },
 
   coldChainFailure: async (cs_id) => {
