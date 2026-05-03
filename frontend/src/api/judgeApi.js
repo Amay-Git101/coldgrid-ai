@@ -62,5 +62,9 @@ export const judgeApi = {
 
   getRoads: async () => {
     return fetchWithThrow(`${API_URL}/api/roads`, { method: 'GET' });
+  },
+
+  getState: async () => {
+    return fetchWithThrow(`${API_URL}/api/state`, { method: 'GET' });
   }
 };
